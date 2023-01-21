@@ -1,0 +1,74 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 603px;
+}
+
+.cell {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border: black solid 2px;
+  background: radial-gradient(
+    circle,
+    rgba(113, 81, 95, 1) 81%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/* 閃爍格子 */
+.cell-flash {
+  background: transparent;
+  background: radial-gradient(
+    circle,
+    rgba(113, 81, 95, 0.6) 81%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.cell-flash:before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: radial-gradient(
+    circle,
+    rgba(113, 81, 95, 1) 81%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  animation: flash 1s ease-in-out infinite;
+}
+
+/* 綠球 */
+.cell:nth-child(1):after,
+.cell:nth-child(3):after,
+.cell:nth-child(7):after,
+.cell:nth-child(9):after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #a5f12b;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
