@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  width: 603px;
+  width: 600px;
 }
 
 .cell {
@@ -16,31 +16,6 @@
     rgba(113, 81, 95, 1) 81%,
     rgba(0, 0, 0, 1) 100%
   );
-}
-
-/* 閃爍格子 */
-.cell-flash {
-  background: transparent;
-  background: radial-gradient(
-    circle,
-    rgba(113, 81, 95, 0.6) 81%,
-    rgba(0, 0, 0, 1) 100%
-  );
-}
-
-.cell-flash:before {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: -1px;
-  right: -1px;
-  bottom: -1px;
-  background: radial-gradient(
-    circle,
-    rgba(113, 81, 95, 1) 81%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  animation: flash 1s ease-in-out infinite;
 }
 
 /* 綠球 */
@@ -59,16 +34,4 @@
   height: 30px;
   border-radius: 50%;
   background-color: #a5f12b;
-}
-
-@keyframes flash {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
