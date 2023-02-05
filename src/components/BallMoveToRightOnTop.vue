@@ -1,15 +1,11 @@
 <template>
   <h3>綠球向右移動、不被遮蓋</h3>
   <section class="container">
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell cell-flash"></div>
-    <div class="cell"></div>
-    <div class="cell cell-flash"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell cell-flash"></div>
+    <div
+      v-for="cell in 9"
+      :key="cell"
+      :class="['cell', { 'cell-flash': [3, 5, 9].includes(cell) }]"
+    />
   </section>
 </template>
 
@@ -27,10 +23,10 @@
 .cell-flash:before {
   content: "";
   position: absolute;
-  left: -1px;
-  top: -1px;
-  right: -1px;
-  bottom: -1px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: radial-gradient(
     circle,
     rgba(113, 81, 95, 1) 81%,

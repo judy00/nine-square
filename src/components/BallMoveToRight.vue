@@ -1,15 +1,11 @@
 <template>
   <h3>綠球向右移動</h3>
   <section class="container">
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell cell-flash"></div>
-    <div class="cell"></div>
-    <div class="cell cell-flash"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell cell-flash"></div>
+    <div
+      v-for="cell in 9"
+      :key="cell"
+      :class="['cell', { 'cell-flash': [3, 5, 9].includes(cell) }]"
+    />
   </section>
 </template>
 
